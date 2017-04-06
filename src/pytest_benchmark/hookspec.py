@@ -4,13 +4,13 @@ def pytest_benchmark_generate_machine_info(config):
 
     .. sourcecode:: python
 
-        def pytest_benchmark_update_machine_info(config):
+        def pytest_benchmark_generate_machine_info(config):
             return {'user': getpass.getuser()}
     """
     pass
 
 
-def pytest_benchmark_update_machine_info(config, info):
+def pytest_benchmark_update_machine_info(config, machine_info):
     """
     If benchmarks are compared and machine_info is different then warnings will be shown.
 
@@ -18,8 +18,8 @@ def pytest_benchmark_update_machine_info(config, info):
 
     .. sourcecode:: python
 
-        def pytest_benchmark_update_machine_info(config, info):
-            info['user'] = getpass.getuser()
+        def pytest_benchmark_update_machine_info(config, machine_info):
+            machine_info['user'] = getpass.getuser()
     """
     pass
 
